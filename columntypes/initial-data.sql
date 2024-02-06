@@ -38,7 +38,9 @@ CREATE TABLE datetime_types_table (
     datetime2_column DATETIME2(3),
 
     -- The same as datetime2 with the addition of a time zone offset
-    -- microsoft.sql.DateTimeOffset . Bu nedir ?
+    -- JDBC driver reads back as microsoft.sql.DateTimeOffset.
+    -- 3 means up to three digits of fractional seconds precision.
+    -- Default precision is 7
     datetimeoffset_column DATETIMEOFFSET(3),
     -- Stores a unique number that gets updated every time a row gets created or modified.
     -- The timestamp value is based upon an internal clock and does not correspond to real time.
