@@ -23,18 +23,18 @@ CREATE TABLE datetime_types_table (
     time_column TIME,
 
     -- Both date and time. From January 1, 1753 to December 31, 9999 with an accuracy of 3.33 milliseconds
-    -- Stores in UTC
-    -- java.sql.Timestamp
+    -- https://stackoverflow.com/a/72440951/4463900
+    -- that type is akin to the SQL standard type TIMESTAMP WITHOUT TIME ZONE, and maps to the Java class LocalDateTime
     datetime_column DATETIME,
 
     -- Both date and time. From January 1, 1900 to June 6, 2079 with an accuracy of 1 minute
-    -- Stores in UTC
-    -- java.sql.Timestamp
+    -- https://stackoverflow.com/a/72440951/4463900
+    -- that type is akin to the SQL standard type TIMESTAMP WITHOUT TIME ZONE, and maps to the Java class LocalDateTime
     smalldatetime_column SMALLDATETIME,
 
     -- From January 1, 0001 to December 31, 9999 with an accuracy of 100 nanoseconds
-    -- Stores in UTC
-    -- java.sql.Timestamp
+    -- https://stackoverflow.com/a/72440951/4463900
+    -- that type is akin to the SQL standard type TIMESTAMP WITHOUT TIME ZONE, and maps to the Java class LocalDateTime.
     datetime2_column DATETIME2(3),
 
     -- The same as datetime2 with the addition of a time zone offset
