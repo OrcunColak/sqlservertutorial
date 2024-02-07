@@ -1,8 +1,8 @@
 version: '3.9'
 services:
   #  See https://medium.com/ms-sql-server-containers/create-and-setup-ms-sql-server-database-docker-containers-2422f757464d
-  # database name=dbo
-  # schema=master
+  # database name=master
+  # schema=dbo
   # user=sa
   # password=Pass@word
   mssql:
