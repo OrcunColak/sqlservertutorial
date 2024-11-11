@@ -1,0 +1,36 @@
+# See https://medium.com/@alexandru.silivestru/streaming-data-from-sql-server-with-debezium-and-kafka-a853847e5fa8
+version: "3"
+volumes:
+  broker1:
+  broker2:
+  broker3:
+services:
+  mssql-primary:
+    image: cdc/sql-server
+    build:
+      context: sqlserver-init
+    container_name: mssql-primary
+    hostname: mssql-primary
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_PID: Enterprise
+      SA_PASSWORD: P@ssw0rd123
+      MSSQL_AGENT_ENABLED: true
+      MSSQL_ENABLE_HADR: 1
+  mssql-secondary:
+    image: cdc/sql-server
+    build:
+      context: sqlserver-init
+    container_name: mssql-secondary
+    hostname: mssql-secondary
+    ports:
+      - "1434:1433"
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_PID: Enterprise
+      SA_PASSWORD: P@ssw0rd123
+      MSSQL_AGENT_ENABLED: true
+      MSSQL_ENABLE_HADR: 1
+  
